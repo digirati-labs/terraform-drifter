@@ -90,3 +90,12 @@ resource "aws_iam_role_policy" "drifter_abilities" {
   role   = "${module.drifter_task.role_name}"
   policy = "${data.aws_iam_policy_document.drifter_abilities.json}"
 }
+
+data "aws_iam_policy" "readonly" {
+  arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "drifter_readonly" {
+  role       = "${module.drifter_task.role_name}"
+  policy_arn = "${data.aws_iam_policy.readonly.arn}"
+}
