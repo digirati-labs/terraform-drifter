@@ -6,6 +6,7 @@ Terraform module for scheduled checking of Terraform drift using Drifter (https:
 |-------------------------|---------------------------------------------------------------------|-------------------|
 | prefix                  | Prefix to give to AWS resources                                     |                   |
 | slack_webhook_url       | Slack Webhook URL for notifications                                 |                   |
+| terraform_identifier    | Identifier for the Drifter task (e.g. `my-tf-repo-master`)          |                   |
 | terraform_s3_bucket     | Name of S3 bucket that the Terraform resides in                     |                   |
 | terraform_s3_key        | S3 Key of the Terraform remote state file                           | terraform.tfstate |
 | terraform_github_repo   | GitHub repository in format `user/repo`                             |                   |
@@ -26,6 +27,7 @@ Terraform module for scheduled checking of Terraform drift using Drifter (https:
 module "drifter_estate" {
   source                 = "git::https://github.com/digirati-labs/terraform-drifter.git//"
   slack_webhook_url      = "${var.slack_webhook_status}"
+  terraform_identifier   = "my-terraform-repo-master"
   terraform_s3_bucket    = "my-state-bucket"
   terraform_github_repo  = "my-github-user/my-terraform-repo"
   terraform_github_token = "${data.aws_ssm_parameter.terraform_github_token.value}"

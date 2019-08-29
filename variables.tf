@@ -1,4 +1,5 @@
 variable "slack_webhook_url" {}
+variable "terraform_identifier" {}
 variable "terraform_s3_bucket" {}
 
 variable "terraform_s3_key" {

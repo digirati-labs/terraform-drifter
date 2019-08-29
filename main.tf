@@ -1,5 +1,5 @@
 locals {
-  identifier = "drifter-${var.terraform_github_repo}-${var.terraform_github_branch}"
+  identifier = "drifter-${var.terraform_identifier}"
 }
 
 module "drifter_task" {
