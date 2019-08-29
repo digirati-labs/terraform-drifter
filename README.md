@@ -1,6 +1,6 @@
-# Shutterbug
+# Drifter
 
-Terraform module for scheduled backing up of an Elasticsearch instance with snapshots that are held in S3, with notifications sent to a Slack webhook.
+Terraform module for scheduled checking of Terraform drift using Drifter (https://github.com/digirati-labs/drifter), with notifications sent to a Slack webhook and metrics emitted to Cloudwatch.
 
 | Variable                | Description                                                         | Default           |
 |-------------------------|---------------------------------------------------------------------|-------------------|
