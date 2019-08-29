@@ -74,3 +74,9 @@ data "aws_iam_policy_document" "drifter_abilities" {
     ]
   }
 }
+
+resource "aws_iam_role_policy" "drifter_abilities" {
+  name   = "${var.prefix}-drifter-${local.identifier}-abilities"
+  role   = "${module.drifter_task.role_name}"
+  policy = "${data.aws_iam_policy_document.drifter_abilities.json}"
+}
