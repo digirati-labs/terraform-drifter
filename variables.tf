@@ -1,6 +1,10 @@
 variable "slack_webhook_url" {}
 variable "terraform_s3_bucket" {}
-variable "terraform_s3_key" {}
+
+variable "terraform_s3_key" {
+  default = "terraform.tfstate"
+}
+
 variable "terraform_github_repo" {}
 
 variable "terraform_github_branch" {
